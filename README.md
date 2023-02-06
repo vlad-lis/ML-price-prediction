@@ -36,3 +36,9 @@ After the EDA and data cleaning we will most likely have to drop some rows and c
   * Plotting test results.
 * Day 5 - Presentation:
   * Presenting the model.
+
+
+## Day 1 - EDA:
+* EDA results included in the jupyter file;
+* EDA plan for data preparation before concatenation described in [.xls file ](https://github.com/vlad-lis/Ironhack-midterm/blob/main/EDA_planning.xlsx):
+![EDA plan](./EDAplan.png)
