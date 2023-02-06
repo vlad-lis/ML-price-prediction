@@ -36,7 +36,7 @@ After the EDA and data cleaning we will most likely have to drop some rows and c
   * Plotting test results;
   * Presentation preparation.
   * _optional:_
-    * tableau dashboard for initial data set;
+    * tableau dashboard for the initial data set;
 * Day 5 - Presentation:
   * Presenting the model.
 
