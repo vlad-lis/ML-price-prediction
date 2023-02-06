@@ -12,7 +12,7 @@ Creating a model to predict prices for used cards.
 ## Description of the dataset:
 [Vehicle dataset](https://www.kaggle.com/datasets/nehalbirla/vehicle-dataset-from-cardekho) found on Kaggle.
 
-The dataset has up to 14,828 rows spread over 4 csvs. Every csv has a different amount of columns, different header names and the data is formatted in a different style.
+The combined dataset has up to 14,828 rows spread over 4 csvs. Every csv has a different amount of columns, different header names and the data is formatted in different styles.
 Columns range from 8 to 20 so we will most likely use 6 columns if there is not enough overlap.
 After the EDA and data cleaning we will most likely have to drop some rows and columns in case we cannot use all of the rows because of the aformentioned situation.
 
@@ -33,9 +33,13 @@ After the EDA and data cleaning we will most likely have to drop some rows and c
   * Creating a model;
   * Testing the model;
   * Comparing predicted and test results;
-  * Plotting test results.
+  * Plotting test results;
+  * Presentation preparation.
+  * _optional:_
+    * tableau dashboard for initial data set;
 * Day 5 - Presentation:
   * Presenting the model.
+
 
 
 ## Day 1 - EDA:
