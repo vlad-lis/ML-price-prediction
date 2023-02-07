@@ -27,6 +27,7 @@ After the EDA and data cleaning we will most likely have to drop some rows and c
   * Checking for duplicates;
   * Filtering unwanted outliers.
 * Day 3 - Transforming the data:
+  * Creating an overview pairplot (seaborn) to check for correlation;
   * Scaling numerical features;
   * Encoding categorical features.
 * Day 4 - Modelling:
@@ -44,5 +45,5 @@ After the EDA and data cleaning we will most likely have to drop some rows and c
 
 ## Day 1 - EDA:
 * EDA results included in the jupyter file;
-* EDA plan for data preparation before concatenation described in [.xls file ](https://github.com/vlad-lis/Ironhack-midterm/blob/main/EDA_planning.xlsx):
-![EDA plan](./EDAplan.png)
+* EDA plan for data preparation before concatenation described in [.xls file ](https://github.com/vlad-lis/Ironhack-midterm/blob/main/EDA/EDA_planning.xlsx):
+![EDA plan](./EDA/EDAplan.png)
