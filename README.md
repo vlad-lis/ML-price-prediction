@@ -44,6 +44,21 @@ After the EDA and data cleaning we will most likely have to drop some rows and c
 
 
 ## Day 1 - EDA:
-* EDA results included in the jupyter file;
 * EDA plan for data preparation before concatenation described in [.xls file ](https://github.com/vlad-lis/Ironhack-midterm/blob/main/EDA/EDA_planning.xlsx):
 ![EDA plan](./EDA/EDAplan.png)
+* EDA results:
+  * 'car data.csv' has anomalies in feature values; the file is ignored in the analysis due to its low statistical value with only 300 rows.
+  * 'model' and 'engine' categorical columns have too many unique values; these columns will be ignored for the final data set due to the amount of dummified columns they would create after normalizing the data.
+  * 'seats' column has nine unique values and will be used as the closest present alternative to vehicle type.
+  * in order to concatenate the csv files into one dataframe columns 'location', 'color', 'mileage', 'max power', 'max torque', 'drivetrain', 'length', 'width', 'height', 'fuel tank capacity' will be ignored, since they are not present in each file.
+  * concatenating three csv files will result in a dataframe with roughly over 14k observations.
+  * no outliers require removal.
+
+## Day 2 - Data cleaning results:
+* extracted the first word (Make) in the 'name' and 'owner' columns.
+* dropped extra columns.
+* formatted 'selling price' column.
+* concatenated three files into a new dataframe.
+* checked for null values (there aren't any).
+* checked for duplicates (2.2k duplicated found) and droppped them.
+* check data types (all correct).
