@@ -1,21 +1,12 @@
 import pandas as pd
 import numpy as np
 import statistics as stats
-import seaborn as sns
-import matplotlib.pyplot as plt
-import math
-from sklearn.preprocessing import PowerTransformer, StandardScaler, minmax_scale, OneHotEncoder
-#get_ipython().run_line_magic('matplotlib', 'inline')
+from sklearn.preprocessing import PowerTransformer, StandardScaler
 
 from scipy.stats import iqr
-from sklearn.compose import ColumnTransformer
 from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
-import statsmodels.api as sm
 
-from sklearn.metrics import r2_score
-from sklearn.metrics import mean_squared_error as mse
-from sklearn.metrics import mean_absolute_error as mae
 
 df1 = pd.read_csv('./data/CAR DETAILS FROM CAR DEKHO.csv')
 df2 = pd.read_csv('./data/Car details v3.csv')
@@ -23,8 +14,6 @@ df3 = pd.read_csv('./data/car details v4.csv')
 
 df1['name'] = df1['name'].apply(lambda x: x.split()[0])
 df2['name'] = df2['name'].apply(lambda x: x.split()[0])
-
-
 df1['owner'] = df1['owner'].apply(lambda x: x.split()[0])
 df2['owner'] = df2['owner'].apply(lambda x: x.split()[0])
 
@@ -40,19 +29,15 @@ df3.rename(columns=
 
 df1["selling_price"] /= 100
 df1["selling_price"] = df1["selling_price"].astype(int)
-
 df2["selling_price"] /= 100
 df2["selling_price"] = df2["selling_price"].astype(int)
-
 df3["selling_price"] /= 100
 df3["selling_price"] = df3["selling_price"].astype(int)
-
 
 
 df2.drop(['mileage', 'engine', 'max_power', 'torque', 'seats'], axis=1, inplace=True)
 df3.drop(['Model', 'Location', 'Color', 'Engine', 'Max Power', 'Max Torque', 
           'Drivetrain', 'Length', 'Width', 'Height', 'Seating Capacity', 'Fuel Tank Capacity'], axis=1, inplace=True)
-
 
 df = pd.concat([df1, df2, df3], ignore_index=True)
 
@@ -105,7 +90,6 @@ def clean_seller(value):
 
 df['seller_type'] = df['seller_type'].apply(lambda x: clean_seller(x))
 
-# #### removing outliers
 
 #remove outliers
 def remove_outliers(df):
@@ -124,17 +108,13 @@ categorical = df.select_dtypes(include=[object])
 
 numerical = remove_outliers(numerical)
 
-
 df = pd.concat([numerical, categorical], axis=1)
-
-
 df.dropna(inplace=True)
 
 
-# #### X, y & train, test split
+#X, y & train, test split
 X = df.drop('selling_price', axis=1)
 y = df[['selling_price']].copy()
-
 
 numericalX = X.select_dtypes(include=[np.number])
 categoricalX = X.select_dtypes(include=[object])
@@ -142,18 +122,17 @@ catX = X.select_dtypes(include=[object])
 
 numericalX_columns = numericalX.columns
 
+#dummies
 numericalX = pd.DataFrame(numericalX, columns=numericalX_columns)
 categoricalX = pd.get_dummies(categoricalX, drop_first=True)
 
 numericalX.reset_index(drop=True, inplace=True)
 categoricalX.reset_index(drop=True, inplace=True)
 
-
-#concat
 X = pd.concat([categoricalX, numericalX], axis=1, copy=False)
 
 
-
+#train, test split
 tt_ratio = 0.3
 rand_seed = 40
 
@@ -195,21 +174,7 @@ X_test_cat.reset_index(drop=True, inplace=True)
 X_test = pd.concat([X_test_cat, X_test_num], axis=1, copy=False)
 
 
-X_train_const = sm.add_constant(X_train.to_numpy()) # adding a constant
-X_test_const = sm.add_constant(X_test) # adding a constant
-
-model = sm.OLS(y_train, X_train_const).fit()
-
-print_model = model.summary()
-
-
-
-model = LinearRegression()    # model
-model.fit(X_train, y_train)   # model train
-
-
-y_pred = pd.DataFrame(model.predict(X_test),columns = ['selling_price'] )      # model prediction
-
+### Input -> prediction
 
 # function for numerical column input
 def ask_input_num(question, options):
@@ -234,8 +199,7 @@ def ask_input_cat(question, options):
             return prompt
 
 
-#one row for predictions
-
+#prediction with input
 def prediction():
     print("""
     ******************************
@@ -311,7 +275,7 @@ def prediction():
     return out
 
 
-
+#wrapper function for multiple runs
 def wrapper(func):
     while True:
         ask = input('Run the script? (yes/no) ')

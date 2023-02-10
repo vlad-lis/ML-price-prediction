@@ -1,3 +1,25 @@
+# To run the script:
+
+## 1. Copy repository / files.
+Clone the repository via github desktop or with "git clone https://github.com/vlad-lis/Ironhack-midterm.git" (terminal) or just download it as .zip and extract files.  
+You will only need "predict.py" and "data" folder; they need to be in the same folder on your computer.
+
+## 2. Open terminal.
+In the terminal go to the directory which has the copied repository / files (from step #1):  
+for example (mac):  
+\$ cd Desktop/.. ../Ironhack-midterm  
+or windows:  
+\$ cd C:/Users/.. ../Ironhack-midterm
+
+## 3. Launch the sript from the terminal.
+When in the directory with repository / files type "python predict.py".  
+
+* The script may take a few seconds to run, don't panic :)
+* To exit/stop the script either type "no" when prompted with "Run the script?" or press ctrl+C at any time.
+* To clear the output in the terminal window after the script type "clear".
+  
+___________
+
 # Ironhack midterm project - Used cars price prediction
 
 [Project's repository](https://github.com/vlad-lis/Ironhack-midterm)
