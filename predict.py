@@ -237,7 +237,11 @@ def ask_input_cat(question, options):
 #one row for predictions
 
 def prediction():
-    print('******************************')
+    print("""
+    ******************************
+    *    CAR PRICE PREDICTION    *
+    ******************************
+    """)
     t = X_test.iloc[:1].copy()
     t = pd.DataFrame(t)
     t.iloc[:] = 0
@@ -296,13 +300,13 @@ def prediction():
     if price == 0:
         output = 'Sorry, but the model says this car is a worthless piece of junk :('
     else:
-        output = f'Predicted price is: {price}'
+        output = f'Predicted price is: {price} $'
     
     out = print(f"""
-        ******************************
-        {output} $
-        ******************************
-        """)
+    *******************************
+    {output}
+    *******************************
+    """)
         
     return out
 
