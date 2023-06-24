@@ -12,11 +12,7 @@ To run the script in the terminal or view the notebook file, please follow the i
 
 ## Run locally (predict.py)
 1. Clone the repository.
-2. While in the root directory, install the dependencies via the terminal:  
-   - Activate the conda environment: `$ conda activate`  
-   - Alternatively, manually install pandas and scikit-learn into the current environment:
-     - macOS: `$ python3 -m pip install pandas` and `$ python3 -m pip install scikit-learn`
-     - Windows: `$ python -m pip install pandas` and `$ python -m pip install scikit-learn`
+2. While in the root directory, install the dependencies via the terminal with `$ pip install -r requirements.txt` (also contains dependencies for the notebook).
 3. While in the root directory, run `python3 predict.py` (macOS) or `$ python predict.py` (Windows)  
    **Please note** that `predict.py` contains redundant code that creates the initial and input data frames.
    This is intentionally left for demonstration purposes (code review) and will slightly slow down the initial execution of the script (usually by around 15 seconds, depending on your machine).
@@ -26,7 +22,8 @@ To run the script in the terminal or view the notebook file, please follow the i
 2. To preview:
    - With Jupyter Notebook: Simply open the file in Jupyter Notebook; nothing extra is required.  
    - With VSCode: 
-     - While in the root directory, install the dependencies: `$ pip install -r requirements.txt` (contains extras along with core ones).
+     - Install Jupyter extension.
+     - While in the root directory, install the dependencies: `$ pip install -r requirements.txt`.
      - Switch to the conda Python kernel.
 
 ## Dataset
