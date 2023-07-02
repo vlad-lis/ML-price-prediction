@@ -11,10 +11,10 @@ No additional configuration should be required when using a conda environment an
 
 ## Preview
 * Sample execution of `predict.py` via the terminal:<br><br>
-<img src="./readme_images/terminal.png" alt="home screenshot" style="border: 1px solid">
+<img src="./readme_images/terminal.png" alt="home screenshot">
 
 * Sample execution of the final function in `predict.ipynb` via Jupyter Notebook:<br><br>
-<img src="./readme_images/notebook.png" alt="home screenshot" style="border: 1px solid">
+<img src="./readme_images/notebook.png" alt="home screenshot">
 
 
 ## Run locally (predict.py)
