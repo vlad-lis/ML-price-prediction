@@ -2,12 +2,19 @@
 
 A linear regression model developed to predict the prices of used cars.
 
-To view all stages with comments, open `predict.ipynb` with Jupyter Notebook or an IDE that supports a Jupyter Python kernel.    
+* To view all stages with comments, open `predict.ipynb` with Jupyter Notebook or an IDE that supports a Jupyter Python kernel ([instructions](#view-notebook-predictipynb) below)   
 No additional configuration should be required when using a conda environment and a conda Python kernel.  
-To run the script in the terminal or view the notebook file, please follow the instructions below.
+* To run the script (`predict.py`) in the terminal, please follow the [instructions](#run-locally-predictpy) below.
 
-* `predict.py` prompts for user input to make a prediction.
-* `predict.ipynb` contains all stages of model development along with comments. The final function, which prompts for input and outputs the prediction, can be found at the end of the notebook.
+`predict.py` prompts for user input to make a prediction.  
+`predict.ipynb` contains all stages of model development along with comments. The final function, which prompts for input and outputs the prediction, can be found at the end of the notebook.
+
+## Preview
+* Sample execution of `predict.py` via the terminal:<br><br>
+<img src="./readme_images/terminal.png" alt="home screenshot" border="1px solid">
+
+* Sample execution of the final function in `predict.ipynb` via Jupyter Notebook:<br><br>
+<img src="./readme_images/notebook.png" alt="home screenshot" border="1px solid">
 
 
 ## Run locally (predict.py)
@@ -17,7 +24,7 @@ To run the script in the terminal or view the notebook file, please follow the i
    **Please note** that `predict.py` contains redundant code that creates the initial and input data frames.
    This is intentionally left for demonstration purposes (code review) and will slightly slow down the initial execution of the script (usually by around 15 seconds, depending on your machine).
 
-## Run/view locally (predict.ipynb) 
+## View notebook (predict.ipynb) 
 1. Clone the repository.
 2. To preview:
    - With Jupyter Notebook: Simply open the file in Jupyter Notebook; nothing extra is required.  
